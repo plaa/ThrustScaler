@@ -23,6 +23,12 @@ public class ThrustScaler extends AbstractSimulationExtension {
 	}
 	
 	@Override
+	public String getDescription() {
+		// This description is shown when the user clicks the info-button on the extension
+		return "This extension multiplies the thrust of motors by a user-defined multiplier.";
+	}
+	
+	@Override
 	public void initialize(SimulationConditions conditions) throws SimulationException {
 		conditions.getSimulationListenerList().add(new ThrustScalerSimulationListener(getMultiplier()));
 	}
